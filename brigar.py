@@ -4,15 +4,13 @@ def briga():
     vidasLoki = 5
     vidasAdversario = 3
     while vidasAdversario != 0 or vidasLoki != 0:
-        acao = input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!
-        ")
+        acao = int(input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!"))
         if acao == 1:
             #usa arma
         elif acao == 2:
             #dá soco
-            c
         elif acao == 3:
-            fugir input("Deseja realmente fugir?\nPressione 1 para confirmar ou outra tecla para negar")
+            fugir = int(input("Deseja realmente fugir?\nPressione 1 para confirmar ou outra tecla para negar"))
             if fugir == 1:
                 perder()
             else:
