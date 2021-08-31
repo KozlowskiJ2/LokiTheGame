@@ -1,6 +1,8 @@
 mochila = []
+import abrirMochila
 import random
 import os
+import inicioEfim
 
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -17,6 +19,7 @@ def cela():
 
 def espera(i):
     i=i+1
+    limpar_tela()
     acao = int(input(print("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não")))
     if acao==1:
         procura()
@@ -29,18 +32,19 @@ def espera(i):
 def procura():
     opcao=int(input(print("Parece que você achou um clips...\nColocar no bolso?\n1-Sim\n2-Não")))
     if opcao==1:
+        limpar_tela()
         print("Item no bolso.")
         mochila.append("clips")
         print("Acho que da para abrir essa porta com isso e com um pouco de furtilidade...\nPegue no bolso o clips")
-        # puxar abrir mochila
+        escolha=abrirMochila.abreMochila(mochila)
         print("Aperte ENTER para tentar com ",mochila[0])
         input()
-        #vai para uma função que tenta abrir gerando números aleatorios de 1 ou 0, tendo no maximo 3 tentativas falhas, apos isso vai sozinho
-        # if escolha==0:
-        #     abrir_cela(i=0)
-        # else:
-        #     print("Não é possível realizar essa ação com esse item...\nEscolha outro")
-        #     # puxar abrir mochila
+        # vai para uma função que tenta abrir gerando números aleatorios de 1 ou 0, tendo no maximo 3 tentativas falhas, apos isso vai sozinho
+        if escolha=="clips":
+            abrir_cela(i=0)
+        else:
+            print("Não é possível realizar essa ação com esse item...\nEscolha outro")
+            # puxar abrir mochila
 
     elif opcao==2:
         opcao=int(input(print("Tem certeza?\nIsso pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips")))
@@ -61,6 +65,7 @@ def abrir_cela(i):
         abrir_cela(i)
 
 def camara():
+    limpar_tela()
     acao = int(input(print("Voce entrou em uma camera com 2 portas\nEscolha uma:\n1-Esquerda\n2-Direita")))#Esolha de alguns dos lados
     if acao==1:
         acao = int(input(print("Faca silencio ha um guarda dormindo...\nOlha uma chave, deve ser para a próxima porta\nE um item misterioso, deve ser util. Deseja pega-los?\n1-Sim\n2-Não")))#Pega de itens ou não
@@ -68,9 +73,9 @@ def camara():
             mochila.append("Chaves")
             mochila.append("Item misterioso")
             acao = int(input(print("Destrancar a porta com as chaves do guarda?\n1-Sim\n2-Não")))
-            if acao==1 and mochila[1]=="Chaves":#trocar se precisar de algum item depois do clips
-                print("Porta destrancada")
-                sala_h()
+            if acao==1:
+                abrir_Porta()
+
             elif acao==2:
                 print("Nao ha mais nada de interessante aqui, voltaremos para a camara e tambem deixaremos os itens aqui...")
                 camara()
@@ -83,22 +88,48 @@ def camara():
         limpar_tela()
         cela()
 
+def abrir_Porta():
+    escolha=abrirMochila.abreMochila(mochila)
+    if escolha=="Chaves":
+        print("Porta destrancada")
+        sala_h()
+    else:
+        print("Voce escolhe o item errado.")
+        abrir_Porta()
+
 def sala_h():
-    acao = int(input(print("Eita, o Hulk ta aqui, acho que seria uma boa usar o Item misterioso.\nSim\nNao")))
-    if acao==1 and mochila[2]=="Item misterioso":#trocar se precisar de algum item depois de chaves
-        print("Olha, esse item deve ser um podador, um item usado para cortar acabar com sua existencia de modo definitivo no espaco tempo...\nResumidamente, nao existe mais Hulk")
-        print("Olha, ha uma escrivaninha cheia de armas aqui.\nPor que tem isso aqui? Nao me pergunte, sou apenas um narrador.\nMas que tal pegar uma delas? Pode ser util...")
-        sala_ultima()
+    acao = int(input(print("Eita, o Hulk ta aqui, acho que seria uma boa usar o Item misterioso.\n1-Sim\n2-Nao")))
+    if acao==1:
+        escolha=abrirMochila.abreMochila(mochila)
+        if escolha=="Item misterioso":
+            limpar_tela()
+            print("Olha, esse item deve ser um podador, um item usado para cortar acabar com sua existencia de modo definitivo no espaco tempo...\nResumidamente, nao existe mais Hulk")
+            print("Olha, ha uma escrivaninha cheia de armas aqui.\nPor que tem isso aqui? Nao me pergunte, sou apenas um narrador.\nMas que tal pegar uma delas? Pode ser util...")
+            sala_ultima()
+        else:
+            mensagem="Voce escolheu o item errado e acabou apanhando feio do HUlk :|\nTao feio que morreu ;("
+            inicioEfim.perder(mensagem)
     elif acao==2:
-        print("Voce apanhou tanto que morreu ;(")
-        #def perder()
-    elif mochila[2]!="Item misterioso":#trocar se precisar de algum item depois de chaves
-        print("Voce nao pegou o item misterioso e nao teve nenhuma chance contra o Hulk desarmado ;(")
-        #def perder()
+        mensagem="Voce apanhou tanto que morreu ;("
+        inicioEfim.perder(mensagem)
 
 def sala_ultima():
-    escolha = int(input("1-Adaga\n2-Espada de uma mao\n3-Clava\n4-Faca de cortar pao\n5-Cortador de grama(nunca deixe elas crescerem, ou o pior pode acontecer\n6-Lanca\nEscolha: )"))
-    #Continuar fazendo desse ponto
+    opcao=["Adaga","Espada de uma mao","Clava","Faca de cortar pao","Cimitarra","Lanca"]
+    acao = int(input(print("Escolha uma\n1-Adaga\n2-Espada de uma mao\n3-Clava\n4-Faca de cortar pao\n5-Cimitarra\n6-Lanca")))
+    for i in range(7):
+        if i==acao:
+            mochila.append(opcao[i-1])
+    print("Ops...\nTem uma porta, não temos chaves mas pelo estado dela conseguimos abrir ela com algum objeto\nVamos dar uma olhada no bolso")
+    escolha=abrirMochila.abreMochila(mochila)
+    if escolha=="clava":
+        acao=int(input(print("Usar a ",escolha," para abrir a porta?\n1-Sim\n2-Nao")))
+        if acao ==1:
+            print("Voce acabou com a porta, agora so falta acabar com guarda que esta dentro da sala e coincidentemente te prendeu")
+            #puxar brigar
+            #se venceu END GAME
+
+
+
 
 cela()
 #puxar brigar
