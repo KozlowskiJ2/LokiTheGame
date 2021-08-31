@@ -1,7 +1,12 @@
 def cela():
-    print("Voce esta preso...\nAperte ENTER para continuar")
+    print("Olá, Loki! Ou devo dizer, variante? Em nome da Autoridade de Variância Temporal, você está preso por "
+          "crimes cometidos contra a Linha do Tempo Sagrada.")
+    print("A partir de agora, você vai ficar aqui nessa prisão especial, revivendo em looping memórias ruins do seu passado.")
     input()
-    acao = int(input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Para procurarn2-Esperar")))
+    print("...\n"          
+          "\né... parece que não tem nenhum guarda por aqui")
+
+    acao = int(input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Para procurar\n2-Esperar")))
     limpar_tela()#limpa a saída do usuário
     if acao==1:
         procura()
@@ -20,18 +25,18 @@ def espera(i):
         espera(i)
     
 def procura():
-    opcao=int(input("Parece que você achou um clips...\nColocar no bolso?\n1-Sim\n2-Não"))
+    opcao = int(input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não"))
     if opcao==1:
         mochila.append("clips")
-        print("Acho que da para abrir essa porta com isso e com um pouco de furtilidade...\nPegue no bolso o clips")
+        print("Ninguém está te vendo! Parece uma ótima oportunidade para abrir a cela com isso.\nPegue o clips no bolso")
         # puxar abrir mochila
-        print("Aperte ENTER para tentar com ",mochila[0])
+        print("Aperte ENTER para tentar abrir a cela com ", mochila[0])
         input()
         #vai para uma função que tenta abrir gerando números aleatorios de 1 ou 0, tendo no maximo 3 tentativas falhas, apos isso vai sozinho
         abrir_cela(i=0)
 
     elif opcao==2:
-        opcao=int(input("Tem certeza?\nIsso pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips"))
+        opcao=int(input("Tem certeza?\nEssa pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips"))
         if opcao==1:
             input("Devido a sua escolha voce ficou o resto da sua vida na prisão e morreu;")
             #def perder()
@@ -41,7 +46,8 @@ def procura():
 def abrir_cela(i):
     tentativa=random.randint(0,1)
     if tentativa==0 or i==3:
-        print("Voce conseguiu abrir a cela!!!\nEntretanto...um guarda te viu e está vindo, se prepare...\n")
+        print("Nada que o deus da trapaça não consiga fazer, não é mesmo? Parabéns, parece que você abriu a cela")
+        print("Ops... um guarda está vindo. Parece que você fez muito barulho. Se prepare para lutar...\n")
     elif tentativa==1:
         print("Ops, voce não conseguiu...\nAperte ENTER para tentar de novo")
         input()

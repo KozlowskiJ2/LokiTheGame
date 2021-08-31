@@ -3,9 +3,9 @@ def chave():
         chave = int(input("Você vai até a porta para abri-la com as chaves, qual chave deseja usar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande"))
         while chave != 3
             chave = int(input("Não entra! Qual chave quer tentar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande"))
-        input("Uma porta medival para uma chave medieval!")
+        input("Uma porta medieval para uma chave medieval!")
 def corredor():
-    input("Você sai da cela e um guarda está a sua espera, eu esperava mais de um!")
+    input("Você sai da cela e um guarda está a sua espera. É, eu esperava que fosse mais de um!")
     brigar()
     acao = int(input("Você olha para o corredor de celas e todas estão vazias, uma porta medieval fecha o corredor.\n1-Procurar pela chave\n2-Tentar arrombar a porta\n3-Voltar para a cela"))
     if acao == 1:
@@ -20,11 +20,7 @@ def corredor():
             perdeu("Siga as regras do jogo!")
     
     elif acao == 3:
-        perdeu("Você foi procurar algo na cela e acabou esbarrando em um botão de alarme! Mais sorte da próxima vez?")
+        perdeu("Você foi procurar algo na cela e acabou esbarrando em um botão de alarme! Mais sorte da próxima vez!")
     else:
-        perdeu("Sem trapacear!")
-
-
-            
-
+        perdeu("Sem trapacear!")         
         
