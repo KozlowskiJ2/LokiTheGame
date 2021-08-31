@@ -1,11 +1,20 @@
+from limparTela import limpar_tela
+from inicioEfim import perder
 def camara():
     limpar_tela()
-    acao = int(input("Voce entrou em uma camera com 2 portas\nEscolha uma:\n1-Esquerda\n2-Direita\n"))#Escolha de alguns dos lados
+    acao = int(input("Voce entrou em uma camara com 2 portas\nEscolha uma:\n1-Esquerda\n2-Direita\n"))#Escolha de alguns dos lados
     if acao==1:
-        acao = int(input("Faca silencio, ha um guarda dormindo...\nTem uma chave em forma de coração, deve ser para a próxima porta...\nE um item misterioso, deve ser util. Deseja pega-los?\n1-Sim\n2-Não\n"))#Pega de itens ou não
+        acao = int(input("Faca silencio, ha um guarda dormindo...\nTem uma chave em forma de coração, deve ser para a próxima porta...\n Deseja pega-la?"))
         if acao ==1:
-            mochila.append("coracao")
-            mochila.append("Item misterioso")
+            mochila.append("Chave de coração")
+            podador = int(input("O guarda deixou um item parecido com uma arma no chão, deseja pegar?\n1-Sim\n2-Não"))
+            if podador == 1:
+                mochila.append("arma estranha")
+                input("Nao ha mais nada nessa sala alem de um guarda dormindo e uma porta trancada, voltaremos para a camara")
+            elif == 2:
+                input("Nao ha mais nada nessa sala alem de um guarda dormindo e uma porta trancada, voltaremos para a camara")
+
+
             acao = int(input("Destrancar a porta com as chaves do guarda?\n1-Sim\n2-Não\n"))
             if acao==1:
                 abrir_Porta()
@@ -19,10 +28,14 @@ def camara():
 
     elif acao==2:
         perder("Ops...\nVoce entrou em uma sala com 5 guardas. Parece que voce está em uma fria...")
+    
+    else:
+        input("Selecione uma opção válida!")
+        camara()
 
 def abrir_Porta():
     escolha=abrirMochila.abreMochila(mochila)
-    if escolha=="Chaves":
+    if escolha=="Chave de coração":
         print("Porta destrancada")
         sala_h()
     else:
@@ -44,6 +57,9 @@ def sala_h():
     elif acao==2:
         mensagem="Voce apanhou tanto que morreu ;("
         perder(mensagem)
+    else:
+        input("Selecione uma opção válida!")
+        sala_h()
 
 def sala_ultima():
     opcao=["Adaga","Espada de uma mao","Clava","Faca de cortar pao","Cimitarra","Lança"]
@@ -59,3 +75,6 @@ def sala_ultima():
         if acao ==1:
             print("Voce acabou com a porta, agora so falta acabar com guarda que esta dentro da sala e coincidentemente te prendeu")
             brigar()
+    else:
+        print("Acho que com essa arma voce nao vai conseguir, acho melhor escolher outra")
+        sala_ultima()
