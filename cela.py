@@ -31,7 +31,7 @@ def procura():
         abrir_cela(i=0)
 
     elif opcao==2:
-        opcao=int(input(print("Tem certeza?\nIsso pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips")))
+        opcao=int(input("Tem certeza?\nIsso pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips"))
         if opcao==1:
             input("Devido a sua escolha voce ficou o resto da sua vida na prisão e morreu;")
             #def perder()
