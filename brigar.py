@@ -1,12 +1,16 @@
+from limparTela import limpar_tela
 import random
 from abrirMochila import abreMochila
 from inicioEfim import perder
 def briga(mochila):
+
     vidasLoki = 5
     vidasAdversario = 3
-    while vidasAdversario > 0 or vidasLoki > 0:
+    while True:
+        if vidasAdversario <= 0 or vidasLoki <= 0:
+            break
         acao = int(input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!\n"))
-        if acao == 1: #quando tiver arma, estar na posição 1
+        if acao == 1:
             usar = abreMochila(mochila)
             if usar == "podador":
                 vidasAdversario = 0
@@ -43,6 +47,7 @@ def briga(mochila):
                 vidasLoki -=1
         else:
             input("Selecione uma opção válida!")
+        limpar_tela()
     if vidasLoki <= 0 :
         perder("Você acabou desmaiando e sendo levado de volta para a cela...É o fim")
     else:

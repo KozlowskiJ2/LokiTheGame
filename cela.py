@@ -12,9 +12,11 @@ def cela(mochila):
         procura(mochila)
     elif acao==2:
         espera(i=0)#vai para uma função que pergunta para o usuario se ele quer procurar até ele falar que sim ou juntar 5 tentativas, ai perde
+    else:
+        input("Selecione uma opção válida!")
 
 def espera(i):
-    i=i+1
+    i=i+1        
     acao = int(input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n"))
     if acao==1:
         procura()
@@ -24,6 +26,9 @@ def espera(i):
     elif acao==2:
         espera(i)
     
+    else:
+        input("Selecione uma opção válida!")    
+        
 def procura(mochila):
     opcao = int(input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não\n"))
     if opcao==1:
@@ -42,6 +47,9 @@ def procura(mochila):
             #def perder()
         elif opcao==2:
             abrir_cela(i=0)
+
+    else:
+        input("Selecione uma opção válida")        
 
 def abrir_cela(i):
     tentativa=random.randint(0,1)
