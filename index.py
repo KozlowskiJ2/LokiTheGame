@@ -1,6 +1,9 @@
 mochila = []
 from cela import cela
+from salao import salao
+from corredor import corredor
 from brigar import briga
 
 cela(mochila)
-briga(mochila)
+corredor(mochila)
+salao()

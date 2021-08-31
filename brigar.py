@@ -19,7 +19,7 @@ def briga(mochila):
                 input("Quase um home run...")
                 vidasAdversario -= 2
             else:
-                input(f"Isso não é bem uma arma, tá mais pra um {usar}")
+                input("Isso não é bem uma arma, tá mais pra um {usar}")
                 vidasLoki -= 1        
         elif acao == 2:
             soco = random.randrange(1, 101)
@@ -52,4 +52,6 @@ def briga(mochila):
         perder("Você acabou desmaiando e sendo levado de volta para a cela...É o fim")
     else:
         input("Nada como uma briga para se sentir mais vivo")
+
+#chamar corredor
     
