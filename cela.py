@@ -1,21 +1,21 @@
-def cela():
-    print("Olá, Loki! Ou devo dizer, variante? Em nome da Autoridade de Variância Temporal, você está preso por "
-          "crimes cometidos contra a Linha do Tempo Sagrada.")
-    print("A partir de agora, você vai ficar aqui nessa prisão especial, revivendo em looping memórias ruins do seu passado.")
+from limparTela import limpar_tela
+import random
+def cela(mochila):
+    print("Olá, Loki! Ou devo dizer, variante? Em nome da Autoridade de Variância Temporal, você está preso por crimes cometidos contra a Linha do Tempo Sagrada.A partir de agora, você vai ficar aqui nessa prisão especial, revivendo em looping memórias ruins do seu passado.")
     input()
     print("...\n"          
           "\né... parece que não tem nenhum guarda por aqui")
 
-    acao = int(input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Para procurar\n2-Esperar")))
-    limpar_tela()#limpa a saída do usuário
+    acao = int(input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Procurar\n2-Esperar\n"))
+    limpar_tela() #limpa a saída do usuário
     if acao==1:
-        procura()
+        procura(mochila)
     elif acao==2:
         espera(i=0)#vai para uma função que pergunta para o usuario se ele quer procurar até ele falar que sim ou juntar 5 tentativas, ai perde
 
 def espera(i):
     i=i+1
-    acao = int(input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não"))
+    acao = int(input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n"))
     if acao==1:
         procura()
     elif i>=5:
@@ -24,8 +24,8 @@ def espera(i):
     elif acao==2:
         espera(i)
     
-def procura():
-    opcao = int(input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não"))
+def procura(mochila):
+    opcao = int(input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não\n"))
     if opcao==1:
         mochila.append("clips")
         print("Ninguém está te vendo! Parece uma ótima oportunidade para abrir a cela com isso.\nPegue o clips no bolso")
@@ -38,7 +38,7 @@ def procura():
     elif opcao==2:
         opcao=int(input("Tem certeza?\nEssa pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips"))
         if opcao==1:
-            input("Devido a sua escolha voce ficou o resto da sua vida na prisão e morreu;")
+          input("Devido a sua escolha voce ficou o resto da sua vida na prisão e morreu;")
             #def perder()
         elif opcao==2:
             abrir_cela(i=0)

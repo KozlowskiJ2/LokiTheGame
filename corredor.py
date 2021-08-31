@@ -1,13 +1,13 @@
 def chave():
         input("Procurando por todos os bolsos do guarda existe um molho com 4 chaves no seu bolso direito, certamente uma dessas abre a porta!")
-        chave = int(input("Você vai até a porta para abri-la com as chaves, qual chave deseja usar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande"))
+        chave = int(input("Você vai até a porta para abri-la com as chaves, qual chave deseja usar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande\n"))
         while chave != 3
-            chave = int(input("Não entra! Qual chave quer tentar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande"))
+            chave = int(input("Não entra! Qual chave quer tentar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande\n"))
         input("Uma porta medieval para uma chave medieval!")
 def corredor():
     input("Você sai da cela e um guarda está a sua espera. É, eu esperava que fosse mais de um!")
     brigar()
-    acao = int(input("Você olha para o corredor de celas e todas estão vazias, uma porta medieval fecha o corredor.\n1-Procurar pela chave\n2-Tentar arrombar a porta\n3-Voltar para a cela"))
+    acao = int(input("Você olha para o corredor de celas e todas estão vazias, uma porta medieval fecha o corredor.\n1-Procurar pela chave\n2-Tentar arrombar a porta\n3-Voltar para a cela\n"))
     if acao == 1:
         chave()
     elif acao == 2:

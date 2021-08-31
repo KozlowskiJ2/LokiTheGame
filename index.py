@@ -1,10 +1,6 @@
 mochila = []
-def limpar_tela():
-    os.system('cls' if os.name == 'nt' else 'clear')
+from cela import cela
+from brigar import briga
 
-
-
-
-cela()
-
-camara()
+cela(mochila)
+briga(mochila)

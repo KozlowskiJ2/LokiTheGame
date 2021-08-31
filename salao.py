@@ -1,10 +1,10 @@
 def salao():
-    porta = int(input("Você entra na sala com 3 portas, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita"))
+    porta = int(input("Você entra na sala com 3 portas, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))
     saiuSala = False
     while saiuSala != False:
         if porta == 1:
             if portaDestruida == False:
-                resp = int(input('A porta está aberta, deseja entrar?\n1-Sim\n2-Não'))
+                resp = int(input('A porta está aberta, deseja entrar?\n1-Sim\n2-Não\n'))
                 if resp == 1:
                     saiuSala == True
                     break
