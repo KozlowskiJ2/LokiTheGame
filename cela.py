@@ -23,7 +23,7 @@ def espera(i):
     acao = input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n")
     limpar_tela() 
     if acao=="1":
-        procura()
+        procura(mochila)
     elif i>=5:
         perder("Voce esperou tanto tempo que acabou morrendo de velhice ;(")
     elif acao=="2":
