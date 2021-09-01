@@ -9,9 +9,9 @@ def briga(mochila):
     while True:
         if vidasAdversario <= 0 or vidasLoki <= 0:
             break
-        acao = int(input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!\n"))
+        acao = input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!\n")
         limpar_tela()
-        if acao == 1:
+        if acao == "1":
             usar = abreMochila(mochila)
             if usar == "Podador":
                 vidasAdversario = 0
@@ -23,7 +23,7 @@ def briga(mochila):
                 input(f"Isso não é bem uma arma, tá mais pra um {usar}")
                 limpar_tela()
                 vidasLoki -= 1        
-        elif acao == 2:
+        elif acao == "2":
             soco = random.randrange(1, 101)
             if soco % 3 == 0:
                 input("Depois de tanto apanhar, parece que você aprendeu a lutar.")
@@ -33,16 +33,16 @@ def briga(mochila):
                 vidasLoki -= 1
                 input("Esse você errou. Deveria tentar outra coisa, eu acho...")
                 limpar_tela()
-        elif acao == 3:
-            fugir = int(input("Deseja realmente fugir?\nPressione 1 para confirmar ou outra tecla para negar\n"))
+        elif acao == "3":
+            fugir = input("Deseja realmente fugir?\nPressione 1 para confirmar ou outra tecla para negar\n")
             limpar_tela()
-            if fugir == 1:
+            if fugir == "1":
                 perder("Você foi pego. Parece que voce vai ter que pensar em outro plano fugir.")
             else:
                 vidasLoki -= 1
                 input("Você se distraiu querendo fugir e acabou levando um soco!")              
                 limpar_tela()
-        elif acao == 4:
+        elif acao == "4":
             input("Pressione Enter para usar os poderes de trapaça!")
             poder = random.randrange(1, 101)
             if poder % 2 == 0:
