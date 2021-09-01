@@ -87,8 +87,8 @@ def sala_ultima(mochila):
     limpar_tela()
     escolha = abreMochila(mochila)
     if escolha=="clava":
-        acao=int(input("Usar a ",escolha," para abrir a porta?\n1-Sim\n2-Nao"))
-        if acao ==1:
+        acao=input("Usar a ",escolha," para abrir a porta?\n1-Sim\n2-Nao")
+        if acao =="1":
             input("Voce acabou com a porta, agora so falta acabar com guarda que esta dentro da sala e coincidentemente te prendeu")
             briga(mochila)
             limpar_tela()
