@@ -13,12 +13,12 @@ def cela(mochila):
     if acao=="1":
         procura(mochila)
     elif acao=="2":
-        espera(i=0)
+        espera(0,mochila)
     else:
         input("Selecione uma opção válida!")
         cela(mochila)
 
-def espera(i):
+def espera(i,mochila):
     i=i+1        
     acao = input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n")
     limpar_tela() 
@@ -27,10 +27,10 @@ def espera(i):
     elif i>=5:
         perder("Voce esperou tanto tempo que acabou morrendo de velhice ;(")
     elif acao=="2":
-        espera(i)
+        espera(i,mochila)
     else:
         input("Selecione uma opção válida!")
-        espera(i)  
+        espera(i,mochila)  
         
 def procura(mochila):
     opcao = input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não\n")
