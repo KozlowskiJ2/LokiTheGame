@@ -1,11 +1,15 @@
 from brigar import briga
+from salvar import salvar
+from salao import salao
+from abrirPorta import abrir_Porta
 def chave(mochila):
-        input("Procurando por todos os bolsos do guarda existe um molho com 4 chaves no seu bolso direito, certamente uma dessas abre a porta!")
-        mochila.append("molho de chaves")
-        chave = int(input("Você vai até a porta para abri-la com as chaves, qual chave deseja usar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande\n"))
-        while chave != 3:
-            chave = int(input("Não entra! Qual chave quer tentar?\n1-Chave Pequena\n2-Chave dourada\n3-Chave Medieval\n4-Chave grande\n"))
-        input("Uma porta medieval para uma chave medieval!")
+        input("Procurando por todos os bolsos do guarda você acha uma no seu bolso direito e outra na calça, certamente uma dessas abre a porta!")
+        mochila.append("Chave Medieval")
+        mochila.append("Chave Dourada")
+        abriu = abrir_Porta(mochila,1)
+        while abriu != True:
+            abrir_Porta(mochila,1)
+        input("Toda fechadura tem sua chave!")
 def corredor(mochila):
     input("Você sai da cela e um guarda está a sua espera. É, eu esperava que fosse mais de um!")
     briga(mochila)
@@ -25,5 +29,7 @@ def corredor(mochila):
         perdeu("Você foi procurar algo na cela e acabou esbarrando em um botão de alarme! Mais sorte da próxima vez!")
     else:
         perdeu("Sem trapacear!")
-        corredor()
+        corredor(mochila)
+    salvar(1)
+    salao(mochila)
         
