@@ -7,8 +7,6 @@ def chave(mochila):
         mochila.append("Chave Medieval")
         mochila.append("Chave Dourada")
         abriu = abrir_Porta(mochila,1)
-        while abriu != True:
-            abrir_Porta(mochila,1)
         input("Toda fechadura tem sua chave!")
 def corredor(mochila):
     input("Você sai da cela e um guarda está a sua espera. É, eu esperava que fosse mais de um!")

@@ -13,10 +13,10 @@ if save != '0':
     salve.close()
     if carregar == '1':
         if save == '1':
-            mochila = ['Clips','Chave medieval','Chave dourada','']
+            mochila = ['Clips','Chave medieval','Chave Dourada',]
             salao(mochila)
         elif save == '2':
-            mochila = ['Clips','Chave medieval','Chave dourada','Chave coração','arma misteriosa']
+            mochila = ['Clips','Chave medieval','Chave Dourada','Chave de coração','arma misteriosa']
             salao(mochila,True)
 cela(mochila)
             

@@ -64,7 +64,7 @@ def sala_h(mochila):
             input("Olha, há uma escrivaninha deve ter alguma coisa util alí.\nPor que tem isso aqui? Nao me pergunte, sou apenas um narrador.\nMas que tal pegar uma delas? Pode ser util...")
             mochila[mochila.index('arma estranha')] = "Podador"
             opcao=["Joia da Mente","Caneta Bic","Clava","Livro de LP","Borracha verde","Notebook da Xuxa"]
-            acao = int(input("Escolha uma\n1-Joia da Mente\n2-Caneta Bic\n3-Clava\n4-Livro de LP\n5-Borracha Verde\n6Notebook da Xuxa\n"))
+            acao = int(input("Escolha uma\n1-Joia da Mente\n2-Caneta Bic\n3-Clava\n4-Livro de LP\n5-Borracha Verde\n6-Notebook da Xuxa\n"))
             for i in range(7):
                 if i==acao:
                     mochila.append(opcao[i-1])

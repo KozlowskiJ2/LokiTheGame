@@ -13,7 +13,7 @@ def abrir_Porta(mochila,porta):
             return True
         else:
             input("Chave errada!")
-            return False
+            abrir_Porta(mochila,1)
     elif porta == 3:
         if escolha=="Chave Dourada":
             return True

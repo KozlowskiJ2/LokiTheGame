@@ -4,7 +4,7 @@ from salas import sala_h
 from salas import sala_ultima
 from abrirPorta import abrir_Porta
 from salvar import salvar
-def salao(mochila,save):
+def salao(mochila,save = False):
     porta = int(input("Você entra na sala com 3 portas, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))
     limpar_tela()
     saiuSala = False
@@ -15,7 +15,7 @@ def salao(mochila,save):
         if porta == 1:
             if esquerda:
                 input("Essa porta parece ser feita de ouro maciço, com certeza não dá pra arrombar, mas parece que existe uma chave pra ela!")
-                abriu = abrir_Porta(mochila,1)
+                abriu = abrir_Porta(mochila,3)
                 limpar_tela()
                 if abriu:
                     camara(mochila)
@@ -50,7 +50,8 @@ def salao(mochila,save):
         else:
             input("Opção inválida!")
         limpar_tela()
-        porta = int(input("Você volta pro centro da sala, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))    
+        porta = int(input("Você volta pro centro da sala, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))
+        limpar_tela()   
         
 
         
