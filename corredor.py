@@ -1,4 +1,5 @@
 from brigar import briga
+from salao import salao
 def chave(mochila):
         input("Procurando por todos os bolsos do guarda existe um molho com 4 chaves no seu bolso direito, certamente uma dessas abre a porta!")
         mochila.append("molho de chaves")
@@ -25,5 +26,6 @@ def corredor(mochila):
         perdeu("Você foi procurar algo na cela e acabou esbarrando em um botão de alarme! Mais sorte da próxima vez!")
     else:
         perdeu("Sem trapacear!")
-        corredor()
+        corredor(mochila)
+    salao(mochila)
         

@@ -40,9 +40,7 @@ def salao(mochila):
         else:
             input("Opção inválida!")
         limpar_tela()
-        porta = int(input("Você volta pro centro da sala, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))
-
-salao([])     
+        porta = int(input("Você volta pro centro da sala, o que fazer?\n1-Porta da esquerda\n2-Porta do Centro\n3-Porta da direita\n"))    
         
 
         
