@@ -12,10 +12,10 @@ def briga(mochila):
         acao = int(input("Parece que você se meteu em uma briga! O que deseja fazer?:\n1-Usar arma\n2-Dar Soco\n3-Fugir\n4-Trapacear!\n"))
         if acao == 1:
             usar = abreMochila(mochila)
-            if usar == "podador":
+            if usar == "Podador":
                 vidasAdversario = 0
                 input("Era uma vez um guarda...")
-            elif usar == "clava":
+            elif usar == "Clava":
                 input("Quase um home run...")
                 vidasAdversario -= 2
             else:
@@ -52,6 +52,7 @@ def briga(mochila):
         perder("Você acabou desmaiando e sendo levado de volta para a cela...É o fim")
     else:
         input("Nada como uma briga para se sentir mais vivo")
+    limpar_tela()
 
 #chamar corredor
     
