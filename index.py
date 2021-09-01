@@ -16,7 +16,7 @@ if save != '0':
             mochila = ['Clips','Chave medieval','Chave Dourada',]
             salao(mochila)
         elif save == '2':
-            mochila = ['Clips','Chave medieval','Chave Dourada','Chave de coração','arma misteriosa']
+            mochila = ['Clips','Chave medieval','Chave Dourada','Chave de coração','arma estranha']
             salao(mochila,True)
 cela(mochila)
             

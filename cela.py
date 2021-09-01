@@ -1,17 +1,18 @@
 from limparTela import limpar_tela
 from corredor import corredor
 import random
+from inicioEfim import perder
 def cela(mochila):
-    input("Olá, Loki! Ou devo dizer, variante? Em nome da Autoridade de Variância Temporal, você está preso por crimes cometidos contra a Linha do Tempo Sagrada.A partir de agora, você vai ficar aqui nessa prisão especial, revivendo em looping memórias ruins do seu passado.")
+    input("Olá, Loki! Ou devo dizer, variante? Em nome da Autoridade de Variância Temporal, você está preso por crimes cometidos contra a Linha do Tempo Sagrada.\nA partir de agora, você vai ficar aqui nessa prisão especial, revivendo em looping memórias ruins do seu passado.")
     input()
     input("...\n") 
     input("\né... parece que não tem nenhum guarda por aqui")
 
-    acao = int(input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Procurar\n2-Esperar\n"))
+    acao = input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Procurar\n2-Esperar\n")
     limpar_tela() 
-    if acao==1:
+    if acao=="1":
         procura(mochila)
-    elif acao==2:
+    elif acao=="2":
         espera(i=0)
     else:
         input("Selecione uma opção válida!")
@@ -19,21 +20,21 @@ def cela(mochila):
 
 def espera(i):
     i=i+1        
-    acao = int(input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n"))
+    acao = input("Ja passou um bom tempo, quer tentar procurar algo agora?\n1-Sim\n2-Não\n")
     limpar_tela() 
-    if acao==1:
+    if acao=="1":
         procura()
     elif i>=5:
         perder("Voce esperou tanto tempo que acabou morrendo de velhice ;(")
-    elif acao==2:
+    elif acao=="2":
         espera(i)
     else:
         input("Selecione uma opção válida!")
         espera(i)  
         
 def procura(mochila):
-    opcao = int(input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não\n"))
-    if opcao==1:
+    opcao = input("Olha, um clips! Parece que você achou algo útil...\nColocar no bolso?\n1-Sim\n2-Não\n")
+    if opcao=="1":
         mochila.append("Clips")
         input("Ninguém está te vendo! Parece uma ótima oportunidade para abrir a cela com isso.")
         limpar_tela() 
@@ -41,12 +42,12 @@ def procura(mochila):
         limpar_tela() 
         abrir_cela(i=0)
 
-    elif opcao==2:
-        opcao=int(input("Tem certeza?\nEssa pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips"))
+    elif opcao=="2":
+        opcao=input("Tem certeza?\nEssa pode ser a única de chance de sair desse lugar\n1-Sim\n2-Pegar o clips")
         limpar_tela() 
-        if opcao==1:
+        if opcao=="1":
           perder("Devido a sua escolha voce ficou o resto da sua vida na prisão e morreu;")
-        elif opcao==2:
+        elif opcao=="2":
             abrir_cela(i=0)
 
     else:
