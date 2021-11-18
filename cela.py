@@ -1,4 +1,5 @@
 from limparTela import limpar_tela
+from testeVoz import escutar
 from corredor import corredor
 import random
 from inicioEfim import perder
@@ -8,14 +9,17 @@ def cela(mochila):
     input("...\n") 
     input("\né... parece que não tem nenhum guarda por aqui")
 
-    acao = input("Acho que seria uma boa ideia tentar achar algo para fugir...\n1-Procurar\n2-Esperar\n")
+    acao = input("Acho que seria uma boa ideia tentar achar algo para fugir...\nProcurar ou Esperar\n")
+    acao = escutar()
+    input(acao)
     limpar_tela() 
-    if acao=="1":
+    input(acao)
+    if acao=="Procurar":
         procura(mochila)
-    elif acao=="2":
+    elif acao=="Esperar":
         espera(0,mochila)
     else:
-        input("Selecione uma opção válida!")
+        input(acao)
         cela(mochila)
 
 def espera(i,mochila):
@@ -68,3 +72,4 @@ def abrir_cela(i):
         limpar_tela() 
         i=i+1
         abrir_cela(i)
+    
